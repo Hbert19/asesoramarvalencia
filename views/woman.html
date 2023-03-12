@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="header-woman">
+    <div class="bg-header-woman"
+        style="background-image: url({% if woman.header_image %} {{ woman.header_image.url }} {% else %} {% static 'img/slider/bg-woman.jpg' %} {% endif %});">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1>{% if woman.header_title %} {{ woman.header_title }} {% else %} La elegancia y el estilo no
+                        tienen nada que ver con el dinero {% endif %}</h1>
+                    <a href="#" class="btn btn-md btn-mar mt-3">Quiero probar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-woman1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <blockquote class="blockquote-footer text-mar-secondary">
+                    {% if woman.section_1_subtitle %} {{ woman.section_1_subtitle }} {% else %} Descubre lo mejor de ti
+                    con este estudio integral {% endif %}
+                </blockquote>
+                <h1 class="text-center mb-5">{% if woman.section_1_title %} {{ woman.section_1_title }} {% else %}
+                    Servicio exclusivo de Asesoría de imagen integral y Personal Shopper
+                    para mujer {% endif %}</h1>
+                {% if woman.section_1_description %}
+                {{ woman.section_1_description | safe }}
+                {% else %}
+                <p>Análisis exhaustivo de las prendas que más te favorecen, las formas, líneas, colores, texturas y
+                    estampados que mejor se adaptan a tu estilo y silueta.
+                    Te enseño todo esto y además te entrego un dossier digital personalizado con las pautas a seguir
+                    una vez hayamos terminado el análisis.
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-woman2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="{% if woman.section_2_image %} {{ woman.section_2_image.url }} {% else %} {% static 'img/about/woman3.jpg' %} {% endif %}" alt="" class="img-fluid img-mar">
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <h1 class="text-center mb-5">{% if woman.section_2_title %} {{ woman.section_2_title }} {% else %} Objetivo de esta asesoría {% endif %}</h1>
+                {% if woman.section_2_description %}
+                {{ woman.section_2_description | safe }}
+                {% else %}
+                <ol style="line-height: 3rem;">
+                    <li>Proyectar de manera congruente, tu imagen interna y externa.</li>
+                    <li>Lograr tus objetivos de comunicación.</li>
+                    <li>Sentirte más cómoda, segura y atractiva contigo misma.</li>
+                    <li>Crear una imagen real y duradera, volverte experta en ti sin cambiar tu esencia o identidad.
+                    </li>
+                </ol>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-woman3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="text-center mb-5">{% if woman.section_3_title %} {{ woman.section_3_title }} {% else %} ¿Ya no sabes que ponerte cada mañana? {% endif %}</h1>
+                {% if woman.section_3_description %}
+                {{ woman.section_3_description | safe }}
+                {% else %}
+                <p class>Mi objetivo es el de vestirte de forma más eficiente y fácil y divertido para que consigas
+                    un
+                    armario que se adapte a tu silueta y estilo de vida</p>
+                <p>Todos mis servicios son online, lo puedes realizar desde la comodidad de tu hogar y la hora que
+                    mejor se adapte a ti.
+
+                    Puedes contratar mi asesoría personalizada integral o bien los servicios por paquetes
+                    individuales de:
+                </p>
+                <ul style="padding: 15px 15px;">
+                    <li>Colorimetría</li>
+                    <li>Tu estilo</li>
+                    <li>Shopping list</li>
+                    <li>Fondo de armario</li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

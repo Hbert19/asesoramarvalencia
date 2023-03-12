@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="header-about">
+    <div class="bg-header-about" style="background-image: url({% if about.header_image %} {{ about.header_image.url }} {% else %} {% static 'img/slider/bg-contact.jpg' %} {% endif %});>
+        <div class="parallax-overlay">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">{% if about.header_title %} {{ about.header_title }} {% else %} Sobre mi {% endif %}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-about1">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="mb-5 text-center text-mar-secondary">{% if about.section_1_title %} {{ about.section_1_title }} {% else %} Mar Valencia Asesora de imagen {% endif %}</h1>
+            </div>
+            <div class="col-lg-5 align-self-center">
+                <img src="{% if about.section_1_image %} {{ about.section_1_image.url }} {% else %} https://firebasestorage.googleapis.com/v0/b/asesoramarvalencia.appspot.com/o/model.jpg?alt=media&token=c5f103ab-61ef-47d4-865f-2c1e15e3d140 {% endif %}" class="img-fluid img-mar" alt="">
+            </div>
+            <div class="col-lg-7 align-self-center">
+                <h1 class="text-center text-mar-secondary mb-3 mt-md-0 mt-3">
+                    {% if about.section_1_subtitle %} {{ about.section_1_subtitle }} {% else %} Sobre mi {% endif %}
+                </h1>
+                {% if about.section_1_description %}
+                {{ about.section_1_description | safe }}
+                {% else %}
+                <p>Hola mi nombre es Mar Valencia, Colombiana de nacimiento y Española de adopción y después de vivir en
+                    grandes ciudades como: Barcelona, Madrid, New York, San Francisco, estoy radicada en Palma de
+                    Mallorca, una isla llena de paz, energía y luz que me atrapó.</p>
+                <p>No hay nada que me resulte más emocionante que animar a las personas a descubrir su belleza natural y
+                    hacerlas brillar. Empecé ayudando a amigos y familiares con sus atuendos según mi percepción de su
+                    personalidad y estilo.</p>
+                <p>Aunque soy licenciada en Comercio Internacional, esta pasión por la moda siempre ha estado allí, Por
+                    esa razón decidí estudiar Asesoría de Imagen y personal Shopper en la Escuela Internacional de Moda
+                    y Estilo en Madrid, también he cursado otros estudios como: </p>
+
+                <ul>
+                    <li>Estilo Personal con Irma Martínez de la escuela Trendy Academy (Miami) Octubre 2022</li>
+                    <li>Asesor de Imagen Estilista de Moda por el Ministerio de Trabajo y Economía Social (Gobierno de
+                        España) Enero 2022</li>
+                </ul>
+                <p>Con base a toda esta experiencia de vida y de enriquecerme de otras culturas y mis estudios me dan
+                    las herramientas para aportar valor a mi trabajo como asesora de imagen</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <h1 class="text-center text-white mb-5">{% if about.testimonial_title %} {{ about.testimonial_title }} {% else %} Testimonios de mis clientes {% endif %}</h1>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% if about.testimonial.all.count > 0 %}
+                    {% for testimonial in about.testimonial.all %}
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                        <div class="container">
+                            <div class="testimonial">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <img style="border-radius: 4rem; width: 120px;"
+                                            src="{% if testimonial.image %}{{ testimonial.image.url }} {% else %} {% static 'img/testimonial/testimonial-1.png' %} {% endif %}"
+                                            class="img-fluid" alt="">
+                                        <p class="text-center mt-3 text-white">{{ testimonial.name }}</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="container">
+                                            <blockquote class="blockquote mb-4">
+                                                <p style="color: #222;">
+                                                    <i class="fas fa-quote-left fa-lg text-warning me-2 text-white"
+                                                        style="color: white!important"></i>
+                                                    <cite title="Source Title" class="text-white">
+                                                        {{ testimonial.description }}
+                                                    </cite>
+                                                </p>
+                                            </blockquote>
+                                            <p class="text-right text-white">{{ testimonial.date }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="testimonial">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <img src="{% static 'img/testimonial/testimonial-1.png' %}" class="img-fluid"
+                                            alt="">
+                                        <p class="text-center mt-3 text-white">Isabela Castaño</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="container">
+                                            <blockquote class="blockquote mb-4">
+                                                <p style="color: #222;">
+                                                    <i class="fas fa-quote-left fa-lg text-warning me-2 text-white"
+                                                        style="color: white!important"></i>
+                                                    <cite title="Source Title" class="text-white">¡Me encantó! Este es
+                                                        el
+                                                        asesoramiento
+                                                        de imagen más
+                                                        completo que he
+                                                        tenido, le doy un 10/10 ya que gracias a las clases que tuve con
+                                                        Mar, ahora me
+                                                        siento
+                                                        más segura, a la hora de comprar y poco a poco gracias a sus
+                                                        Tips y
+                                                        sus
+                                                        ejercicios me
+                                                        siento más yo misma con cada look. </cite>
+                                                </p>
+                                            </blockquote>
+                                            <p class="text-right text-white">2 Mayo 2021</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-man3">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1>- La ropa no significa nada hasta que alguien vive en ella.</h1>
+                <div class="text-right mt-3">
+                    <blockquote class="blockquote mb-4">
+                        <p style="color: #222;">
+                            <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                            <cite title="Source Title">- Marc Jacobs</cite>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

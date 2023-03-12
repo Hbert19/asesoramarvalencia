@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="header-gifcard">
+    <div class="bg-header-gifcard" style="background-image: url({% if gifcard.header_image %} {{ gifcard.header_image.url }} {% else %} {% static 'img/slider/bg-gifcard.jpg' %} {% endif %});">
+        <div class="parallax-overlay">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">{%if gifcard.header_title %} {{ gifcard.header_title }} {% else %} Tarjeta de regalo {% endif %}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-gifcard1 mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card-component">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="text-white mb-5 text-center">Compra tu Gifcard aquí</h1>
+                        </div>
+                        <div class="col-lg-12">
+                            <form action="" id="form-gifcard">
+                                <div class="form-group">
+                                    <label for="">Servicio</label>
+                                    <select class="form-control" name="services" id="services" required>
+                                        {% if products %}
+                                        {% for product in products %}
+                                        <option value="{{ product.pk }}">{{ product.name }}</option>
+                                        {% endfor %}
+                                        {% else %}
+                                        <option value="150">Personal Shopper Online</option>
+                                        <option value="250">Asesoria de Imagen Integral Online</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                                <div class="form-group mt-5">
+                                    <label for="">Email</label>
+                                    <input required id="email-gifcard" type="email" placeholder="Introduce el email a donde enviarás tu gifcard"
+                                        class="form-control">
+                                </div>
+                                <div class="from-group mt-5">
+                                    <button class="btn btn-mar btn-block" style="background-color: var(--primary-color);" type="submit">Pagar ahora</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

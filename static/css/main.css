@@ -1,0 +1,778 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+@font-face {
+    font-family: Lovelace Text;
+    src: url(../fonts/zetafonts-lovelace-text-regular.otf);
+}
+
+.no-gutter.row,
+.no-gutter.container,
+.no-gutter.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.no-gutter>[class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@font-face {
+    font-family: Garet;
+    src: url(../fonts/Garet-Book.otf);
+}
+
+:root {
+    --primary-color: #f1aca5;
+    --secondary-color: #add1c5;
+    --tertiary-color: #f5f5f5;
+    --secondary-color-hover: #545454;
+}
+
+/* :root {
+    --primary-color: #f1aca5;
+    --secondary-color: #b7adcf;
+    --tertiary-color: #f5f5f5;
+    --secondary-color-hover: #959593;
+} */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+.text-mar {
+    color: var(--primary-color);
+}
+
+.text-mar-secondary {
+    color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Lovelace Text;
+    font-weight: bold;
+}
+
+ul,
+li {
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+p,
+a {
+    font-size: 22px;
+    font-family: Garet;
+}
+
+section p {
+    color: var(--secondary-color);
+    font-family: Garet;
+}
+
+.contact-info a {
+    color: white !important;
+}
+
+.contact-info i {
+    color: white !important;
+    align-self: center;
+    margin: 0 5px;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 15px;
+    right: 15px;
+}
+
+.whatsapp-icon img {
+    width: 60px;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: var(--secondary-color) !important;
+}
+
+/* Home Page */
+
+/* Start Home Header */
+
+.header {
+    height: 580px;
+    color: white;
+    margin-top: 6rem;
+}
+
+.bg-header {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.bg-header-2 {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.bg-header-3 {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+    font-family: Lovelace Text;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.navbar-nav li {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    margin-left: 1rem;
+    text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--secondary-color);
+    margin-left: .5rem;
+    font-size: .75rem;
+    font-family: Lovelace Text;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+    transition: all ease .5s;
+}
+
+.bg-header .caption h1,
+.bg-header-2 .caption h1,
+.bg-header-3 .caption h1 {
+    font-weight: 900 !important;
+    font-size: 45px;
+    font-family: Lovelace Text;
+    letter-spacing: 2.5px;
+}
+
+.bg-header .caption p,
+.bg-header-2 .caption p,
+.bg-header-3 .caption p {
+    font-weight: 400;
+    font-size: 25px;
+    color: #f5f5f5
+}
+
+.btn-mar {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 3rem;
+    padding: 15px 30px;
+    font-weight: 400;
+    font-family: Lovelace Text;
+    letter-spacing: 3px;
+}
+
+.btn-mar:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+.nav-link-btn {
+    display: block;
+    padding: .5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 3rem;
+    transition: all ease .5s;
+}
+
+.nav-link-btn:hover {
+    background-color: white;
+    border-radius: 3rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border-color: var(--primary-color) !important;
+    border: 1.5px solid;
+    transition: all ease .5s;
+}
+
+/* End Header */
+
+/* Section 1 */
+
+.section1 {
+    margin-top: 6rem;
+}
+
+.section1 h1 {
+    color: var(--primary-color);
+    font-family: Lovelace Text;
+    font-weight: bold;
+}
+
+.section1 p {
+    color: var(--secondary-color);
+}
+
+/* End Section 1 */
+
+/* Section 2 */
+
+.section2 {
+    padding: 180px 20px;
+}
+
+.section2 h1 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: Lovelace Text;
+}
+
+.section2 p {
+    color: var(--secondary-color);
+}
+
+img.img-mar {
+    border-top-right-radius: 25rem;
+    border-top-left-radius: 25rem;
+}
+
+.waves {
+    margin-top: -4rem;
+}
+
+.waves img {
+    width: 100%;
+    margin-top: -3rem;
+}
+
+/* End Section 2 */
+
+/* Section 3 */
+
+.section3 {
+    padding: 40px;
+    background-color: var(--secondary-color);
+}
+
+.section3 li,
+p,
+h1 {
+    color: #f5f5f5;
+}
+
+/* End Section 3 */
+
+/* Section 4 */
+
+.section4 {
+    padding: 120px 20px;
+}
+
+/* End Section 4 */
+
+/* Footer */
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 40px;
+}
+
+footer span {
+    font-family: Lovelace Text;
+    color: var(--tertiary-color);
+    font-size: 30px;
+}
+
+.footer-menu a {
+    color: var(--tertiary-color) !important;
+    font-size: 14px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu a:hover {
+    text-decoration: none;
+}
+
+.footer-link{
+    font-size: 16px!important;
+}
+
+.design {
+    color: var(--tertiary-color);
+}
+
+.creativotion {
+    color: var(--tertiary-color);
+    font-size: 18px;
+}
+
+.creativotion:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* End Footer */
+
+/* End Home Page */
+
+
+/* Man Page */
+
+/* Header Man */
+
+.header-man {
+    height: 100vh;
+}
+
+.bg-header-man {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    height: 85%;
+    margin-top: 3rem;
+}
+
+/* End Header Man */
+
+/* Man Parallax */
+
+.parallax {
+    height: 50vh;
+    width: 100%;
+}
+
+.parallax-overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 100%;
+}
+
+.bg-parallax {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* End Man Parallax */
+
+/* Section Man 1 */
+
+.section-man1 {
+    padding: 15px 15px 120px;
+    background-color: var(--secondary-color);
+}
+
+.section-man1 p {
+    color: var(--tertiary-color);
+}
+
+.section-man1 h1 {
+    color: var(--tertiary-color);
+}
+
+/* End Section Man 1 */
+
+/* Section Man 2 */
+
+.section-man2 {
+    padding: 120px 0;
+}
+
+.section-man2 h1 {
+    color: var(--primary-color);
+}
+
+.section-man2 p {
+    color: var(--secondary-color);
+}
+
+/* End Section Man 2 */
+
+/* Section Man 3 */
+
+.section-man3 {
+    padding: 150px 0px 0px
+}
+
+.section-man3 h1 {
+    color: #222;
+}
+
+/* End Section Man 3 */
+
+/* End Man Page */
+
+
+
+
+/* Woman Page */
+
+/* Header Woman */
+
+.header-woman {
+    height: 100vh;
+}
+
+.bg-header-woman {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+/* End Header Woman */
+
+/* Section Woman 1 */
+
+.section-woman1 {
+    padding: 120px 40px;
+    background-color: var(--tertiary-color);
+}
+
+.section-woman1 h1,
+p {
+    color: var(--secondary-color);
+}
+
+/* End Section Woman 1 */
+
+/* Section Woman 2 */
+
+.section-woman2 {
+    padding: 120px 40px;
+}
+
+.section-woman2 h1 {
+    color: var(--primary-color);
+}
+
+.section-woman2 p {
+    color: var(--secondary-color);
+}
+
+/* End Section Woman 2 */
+
+/* Section Woman 3 */
+
+.section-woman3 {
+    padding: 120px 40px;
+}
+
+.section-woman3 h1 {
+    color: var(--primary-color);
+}
+
+.section-woman3 p {
+    color: var(--secondary-color);
+}
+
+/* End Section Woman 3 */
+
+/* End Woman Page */
+
+/* Services Page */
+
+/* Header Services */
+
+.header-services {
+    height: 100vh;
+}
+
+.bg-header-services {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+/* End Header Services */
+
+/* Section Services 1 */
+
+.section-services1 {
+    padding: 120px 40px;
+    background-color: var(--tertiary-color);
+}
+
+.section-services1 h1 {
+    color: var(--secondary-color);
+}
+
+.section-services1 p {
+    color: var(--secondary-color);
+}
+
+.section-services2 a {
+    text-decoration: none;
+    color: #ebc0bc;
+}
+
+.section-services2 a:hover {
+    color: var(--secondary-color-hover);
+}
+
+.bg-parallax-services {
+    background-image: url(../img/parallax/clothes-services.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* End Section Services 1 */
+
+/* Section Services 2 */
+
+.section-services2 {
+    padding: 120px 40px;
+}
+
+.section-services2 h1 {
+    color: var(--secondary-color);
+}
+
+.section-services2 .accordion {
+    font-family: 'Lato';
+}
+
+.section-services2 .accordion button {
+    font-family: Lato;
+    text-decoration: none;
+}
+
+.section-services2 .accordion button:focus {
+    box-shadow: none;
+}
+
+.bg-mar-secondary {
+    background-color: var(--secondary-color);
+}
+
+.card {
+    border-color: var(--secondary-color) !important;
+}
+
+/* End Section Services */
+
+/* End Services Page */
+
+/* Contact Page */
+
+/* Header Contact */
+
+.header-contact {
+    height: 75vh;
+}
+
+.bg-header-contact {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+/* End Header Contact */
+
+/* Section Contact 1 */
+
+.section-contact1 {
+    padding: 120px 40px;
+}
+
+.section-contact1 h1 {
+    color: var(--secondary-color);
+}
+
+i.fa-brands {
+    color: var(--secondary-color);
+}
+
+.social-icons {
+    line-height: 2;
+}
+
+.social-icons a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.form-group input,
+.form-group textarea {
+    border-radius: 1rem;
+    resize: none;
+}
+
+/* End Section Contact 1 */
+
+/* End Contact Page */
+
+/* About Page */
+
+.header-about {
+    height: 75vh;
+}
+
+/* Header About */
+
+.bg-header-about {
+    background-image: url(../img/about/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+/* End Header About */
+
+/* Section 1 About */
+
+.section-about1 {
+    padding: 120px 40px;
+}
+
+/* End Section 1 About */
+
+.testimonials {
+    padding: 140px 40px;
+    background-color: var(--secondary-color);
+}
+
+/* End About Page */
+
+/* Product Detail View Page */
+
+.product-detail-view{
+    margin-top: 4rem;
+}
+
+.product-detail-view .product {
+    padding: 140px 0;
+}
+
+.product-img {
+    border-radius: .5rem;
+}
+
+/* End Product Detail View Page */
+
+/* Gifcard Page */
+
+.header-gifcard {
+    height: 75vh;
+}
+
+.bg-header-gifcard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Section Gifcard 1 */
+
+.section-gifcard1 {
+    padding: 120px 40px;
+}
+
+.card-component {
+    background-color: var(--secondary-color);
+    padding: 80px;
+    border-radius: 1rem;
+    border: 1px solid #e3e7ed !important;
+
+}
+
+.section-gifcard1 .form-group select {
+    border-radius: 3rem;
+}
+
+
+/* End Section Gifcard 1 */
+
+/* End Gifcard Page */
+
+@media(max-width: 968px) {
+    .parallax h1 {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media(max-width: 768px) {
+    body>section>div>div>div>div.col-lg-5.text-center>img {
+        width: 250px;
+    }
+
+    body>section>div>div>div>div.col-lg-7>h1{
+        font-size: 2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    body > section > div > div > div > div.col-lg-7 > p:nth-child(3){
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 425px){
+    body>section>div>div>div>div.col-lg-5.text-center>img {
+        width: 250px;
+    }
+
+    body>section>div>div>div>div.col-lg-7>h1{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    body > section > div > div > div > div.col-lg-7 > p:nth-child(3){
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 320px){
+    .btn-mar{
+        font-size: 12px;
+    }
+}

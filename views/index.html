@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header -->
+<section class="header">
+    <div class="overlay h-100">
+        <div id="carouselExampleControls" class="carousel slide h-100" data-ride="carousel">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <div class="bg-header" style="background-image: {% if home.header_image %} url({{ home.header_image.url }}); {% else %} url({% static 'img/slider/bg-home.jpg' %}); {% endif %}">
+                        <div class="container h-100">
+                            <div class="row justify-content-center h-100 align-items-center">
+                                <div class="caption text-center">
+                                    <h1 class="mt-5">{% if home.header_title %} {{ home.header_title }} {% else %} Tu estilo dice quién eres sin hablar {% endif %}</h1>
+                                    <a href="{% url 'services' %}" target="_blank" class="btn btn-md btn-mar mt-3">Quiero probar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="bg-header-2" style="background-image: {% if home.header_image2 %} url({{ home.header_image2.url }}); {% else %} url({% static 'img/slider/bg-home2.jpg' %}); {% endif %}">
+                        <div class="container h-100">
+                            <div class="row justify-content-center h-100 align-items-center">
+                                <div class="caption text-center">
+                                    <h1 class="mt-5">{% if home.header_title %} {{ home.header_title }} {% else %} Tu estilo dice quién eres sin hablar {% endif %}</h1>
+                                    <a href="{% url 'services' %}" target="_blank" class="btn btn-md btn-mar mt-3">Quiero probar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="bg-header-3" style="background-image: {% if home.header_image3 %} url({{ home.header_image3.url }}); {% else %} url({% static 'img/slider/bg-home3.jpg' %}); {% endif %}">
+                        <div class="container h-100">
+                            <div class="row justify-content-center h-100 align-items-center">
+                                <div class="caption text-center">
+                                    <h1 class="mt-5">{% if home.header_title %} {{ home.header_title }} {% else %} Tu estilo dice quién eres sin hablar {% endif %}</h1>
+                                    <a href="{% url 'services' %}" target="_blank" class="btn btn-md btn-mar mt-3">Quiero probar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End Header -->
+
+<!-- Section 1 -->
+<section class="section1">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 align-self-center">
+                <h1>{% if home.section_1_title %} {{ home.section_1_title }} {% else %} La ropa que llevas puesta refleja tu personalidad {% endif %}</h1>
+                {% if home.section_1_description %}
+                {{ home.section_1_description | safe }}
+                {% else %}
+                <p class="text-justify mt-5">
+                    Es una forma de mostrar a los demás quien eres y cómo eres, incluso sin hablar una palabra, y
+                    que
+                    mejor que aprovechar esta gran herramienta para proyectar lo que realmente queremos transmitir y
+                    vestirnos para el éxito.
+                    Un armario cuidadosamente seleccionado puede ayudarte a simplificar tu vida porque siempre
+                    tendrás
+                    que ponerte.
+                </p>
+                <p class="text-justify mt-3">
+                    Te invito a descubrir tu estilo y personalidad única. No importa el momento o el lugar, puedes
+                    hacerlo desde la comodidad de tu hogar con mi servicio de Asesoría de imagen integral online.
+                    Te sientes identificada con esto:
+                    ¿No tengo nada que ponerme? Y el armario está lleno de prendas que no te gustan, no te sirven o
+                    no
+                    van contigo.
+                    Pues Mi objetivo es el de vestirte de forma más fácil, divertida y acorde a quien eres y lo que
+                    haces y con esto logras tener un armario funcional, comprar menos, y ahorrar más tiempo y
+                    dinero.
+                </p>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{% if home.section_1_image %} {{ home.section_1_image.url }} {% else %} {% static 'img/about/woman.png' %} {% endif %}" width="600" class="img-fluid img-mar">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="text-center">{% if home.section_2_title %} {{ home.section_2_title }} {% else %} ¿Qué es una asesoría de imagen? {% endif %}</h1>
+                {% if home.section_2_description %}
+                {{ home.section_2_description | safe }}
+                {% else %}
+                <p class="text-justify mt-5">
+                    El propósito de una asesoría es trabajar de manera integral tu imagen interna y externa para
+                    conocerte mejor, descubrir tu sello personal, estilo y lo que más te favorece según tus propias
+                    características, objetivos y esencia.
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="waves">
+    <img src="{% static 'img/waves/wave-aqua.svg' %}" alt="" class="img-fluid">
+</div>
+
+<section class="section3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 mt-5">
+                <h1 class="mt-3 text-center">{% if home.section_3_title %} {{ home.section_3_title }} {% else %} Beneficios de la asesoría de imagen {% endif %}</h1>
+                {% if home.section_3_description %}
+                {{ home.section_3_description | safe }}
+                {% else %}
+                <ul class="mt-5">
+                    <li>Proyectar de manera congruente quien eres interior y exteriormente.</li>
+                    <li>Lograr tus objetivos de comunicación</li>
+                    <li>Te sentirás más cómodo seguro y atractivo contigo mismo.</li>
+                    <li>Crear una imagen real y duradera</li>
+                    <li>Te liberaras del: "no tengo nada que ponerme"</li>
+                    <li>Ahorrar tiempo y dinero. Porque compraras con conocimiento.</li>
+                    <li>Tendrás un armario funcional.</li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="wave">
+    <img src="{% static 'img/waves/wave-aqua-down.svg' %}" class="img-fluid" style="width: 100%;">
+</div>
+
+<section class="section4">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="{% if home.section_4_image %} {{ home.section_4_image.url }} {% else %} {% static 'img/about/woman2.jpg' %} {% endif %}" width="600" class="img-fluid img-mar">
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <h1 class="mt-3 text-center text-mar">{% if home.section_4_title %} {{ home.section_4_title }} {% else %} ¿Cómo funciona la asesoría de imagen? {% endif %}</h1>
+                {% if home.section_4_description %}
+                {{ home.section_4_description | safe }}
+                {% else %}
+                <p class="text-mar-secondary mt-5">Desde la comodidad de tu hogar:</p>
+                <ol class="mt-5">
+                    <li>Reserva tu cita: elige fecha y hora</li>
+                    <li>Completa el formulario enviado</li>
+                    <li>Primera entrevista por videoconferencia de 30 minutos</li>
+                    <li>Pasados unos 7 días hábiles, te programo para entregarte el resultado con una master class y
+                        enseñarte a que tú seas tu propio asesor de imagen.</li>
+                    <li>Te entrego toda la información de la asesoría en un dossier personalizado con imágenes, ejemplos
+                        y tips para que lo uses cada vez que lo necesites. </li>
+                    <li>Seguimiento: pasado 1 mes, te llamo para saber cómo llevas el proceso o si tienes dudas al
+                        respecto.</li>
+                </ol>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

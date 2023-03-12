@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="header-services">
+    <div class="bg-header-services"
+        style="background-image: url({% if service.header_image %} {{ service.header_image.url }} {% else %} {% static 'img/slider/clothes.png' %} {% endif %});">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="text-center">{% if service.header_title %} {{ service.header_title }} {% else %}
+                        Servicios Online {% endif %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-services1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="mb-5">{% if service.section_1_title %} {{ service.section_1_title }} {% else %} Enfócate en
+                    vestir diferente {% endif %}</h1>
+                {% if service.section_1_description %}
+                {{ service.section_1_description | safe }}
+                {% else %}
+                <ul class="mb-5">
+                    <li>¿Te gustaría definir tu estilo y saber lo que te favorece?</li>
+                    <li>¿Llevas años vistiendo siempre igual?</li>
+                    <li>¿Te gustaría aprender a combinar tu ropa?</li>
+                    <li>¿Crees que tu imagen actual no refleja la persona que realmente eres?</li>
+                </ul>
+                <p>Pasa al siguiente nivel en tu imagen personal y consigue todas tus metas. Vístete para el éxito </p>
+                <p>La falta de tiempo, la seguridad en uno mismo y el desconocimiento en moda hace que ya no sepamos que
+                    estilo tenemos y por ende nos sintamos estancados en nuestra imagen actual </p>
+                <p>Este servicio es una inversión en ti mismo, que te servirá para toda la vida. Marcaras un antes y un
+                    después en tu imagen.
+                    Reservar ahora.
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-services2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="mb-5">{% if service.section_2_title %} {{ service.section_2_title }} {% else %} Productos &
+                    Servicios {% endif %}</h1>
+                <div class="accordion" id="accordionExample">
+                    {% if service.product.all.count > 0 %}
+                    {% for product in service.product.all %}
+                    <div class="card">
+                        <div class="card-header bg-mar-secondary" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-white" type="button"
+                                    data-toggle="collapse" data-target="#collapse{{ product.pk }}" aria-expanded="true"
+                                    aria-controls="collapse{{ product.pk }}">
+                                    {{ product.name }} <span>${{ product.price | floatformat:0 }}</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse{{ product.pk }}" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="text-center mb-4 mt-4">
+                                    <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/testimonial/woman1.jpg' %} {% endif %}" alt="">
+                                </div>
+                                
+                                {{ product.description | safe }}
+                                <div class="mt-5 mb-5" style="display: flex; justify-content: center;">
+                                    <a href="{% url 'product-detail-view' product.pk %}"
+                                        class="btn btn-mar text-white mt-md-0 mt-3">Comprar ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="card">
+                        <div class="card-header bg-mar-secondary" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-white" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Asesoría de Imagen Integral Online <span>$250</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="text-center mb-4 mt-4">
+                                    <img src="{% static 'img/testimonial/woman1.jpg' %}" class="img-fluid" alt="">
+                                </div>
+                                <p>La falta de tiempo, la seguridad en uno mismo y el desconocimiento en moda hace que
+                                    ya
+                                    no sepamos que estilo tenemos y por ende nos sintamos estancados en nuestra imagen
+                                    actual
+                                </p>
+                                <p>Este servicio es una inversión en ti mismo, que te servirá para toda la vida.
+                                    Marcaras
+                                    un antes y un después en tu imagen.
+                                    Descripción del producto</p>
+                                <p>Master class de Asesoría de imagen completo + dossier digital personalizado.
+                                    Este servicio consta de 2 sesiones por videoconferencia
+                                    En la primera sesión comentaremos un formulario previo que tendrás que rellenar tras
+                                    hacer el pedido. Aquí nos contaras cuáles son tus inquietudes y lo que deseas lograr
+                                    con
+                                    la asesoría</p>
+                                <p>En base a esta primera sesión, te elaboro tu dossier digital personalizado con todos
+                                    los
+                                    apartados referentes a tu imagen para que aprendas a sacar el máximo partido a tu
+                                    imagen.
+                                    Este dossier te lo explico en la segunda sesión a modo de master class, donde podrás
+                                    preguntar cualquier duda que te surja. Tras esta sesión vas a ser capaz de comprar y
+                                    hacer las combinaciones tú solo, siendo fiel a tu estilo, a tus necesidades y estilo
+                                    de
+                                    vida, por tanto tendrás independencia a la hora de saber comprar y combinar tu ropa.
+                                    En definitiva, te enseño las claves para potenciar tu Imagen integral.</p>
+
+                                <h2 class="text-mar-secondary mb-5 mt-5">¿Cómo lo contrato?</h2>
+                                <p>Una vez hayas hecho el pedido online te envió el formulario previo a la primera
+                                    sesión y
+                                    pondremos fecha y hora por mail para fijar tus dos sesiones de Consultoría por
+                                    videoconferencia.</p>
+                                <p>Este servicio incluye:</p>
+                                <p>Dos sesiones de Consultoría por videoconferencia de una duración de 2 horas
+                                    aproximadamente en total.</p>
+                                <p>Tu dossier personalizado, que contiene los siguiente apartados:</p>
+                                <ul>
+                                    <li> Estudio de tipo de Silueta</li>
+                                    <li>Estudio de tipo de Silueta</li>
+                                    <li>Estudio de prendas que mejor van con tu silueta</li>
+                                    <li>Estudio de Estilo personal</li>
+                                    <li>Estudio de Accesorios</li>
+                                    <li>Estudio de Visagismo (rostro, Gafas y peinado)</li>
+                                    <li>Bono regalo adicional</li>
+                                </ul>
+                                <p>Si tienes dudas antes de contratar este servicio online por favor <a
+                                        href="{% url 'contact' %}">contáctame</a></p>
+                                <div class="mt-5 mb-5" style="display: flex; justify-content: center;">
+                                    <a href="#" class="btn btn-mar text-white mt-md-0 mt-3">Comprar ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="parallax">
+    <div class="bg-parallax-services">
+        <div class="parallax-overlay">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1>Si no has probado antes un servicio como este contacta conmigo sin compromiso.</h1>
+                    <a href="{% url 'contact' %}" class="btn btn-mar mt-3">Contactar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-man3">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1>- La mejor manera de vestir es cuando notan primero a la persona y luego el vestido.</h1>
+                <div class="text-right mt-3">
+                    <blockquote class="blockquote mb-4">
+                        <p style="color: #222;">
+                            <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                            <cite title="Source Title">- Óscar de la Renta</cite>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

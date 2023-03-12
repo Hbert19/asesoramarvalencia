@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+<section class="header-man">
+    <div class="bg-header-man" style="background-image: url({% if man.header_image %} {{ man.header_image.url }} {% else %} {% static 'img/slider/bg-man.jpg' %} {% endif %});">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1>{% if man.header_title %} {{ man.header_title }} {% else %} Conócete primero y luego adórnate acorde a ello. {% endif %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section1">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <img src="{% if man.section_1_image %} {{ man.section_1_image.url }} {% else %} {% static 'img/about/man1.jpg' %} {% endif %}" width="600" class="img-fluid img-mar">
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <h1>{% if man.section_1_title %} {{ man.section_1_title }} {% else %} Te ayudo a que brilles por ti mismo {% endif %}</h1>
+                {% if man.section_1_description %}
+                {{ man.section_1_description | safe }}
+                {% else %}
+                <p class="text-justify mt-5">
+                    El estilo debe ser siempre una declaración de principios de uno mismo, expresa lo que somos sin
+                    tener que hablar.
+                    Esta es la razón por la que mis servicios de consultoría de imagen para hombre son
+                    personalizados y únicos para cada uno de mis clientes. Con los que profundizo en su forma de
+                    vida, gustos, características físicas para conseguir los mejores resultados.
+
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="wave">
+    <img src="{% static 'img/waves/wave-man-aqua.png' %}" class="img-fluid" alt="">
+</div>
+
+<section class="section-man1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="mb-5">{% if man.section_2_title %} {{ man.section_2_title }} {% else %} Objetivo de una asesoria online {% endif %}</h1>
+                {% if man.section_2_description %}
+                {{ man.section_2_description | safe }}
+                {% else %}
+                <p class="text-justify">Hacer que te sientas seguro y vestido acorde para cada ocasión, además de
+                    conseguir un armario
+                    funcional y lleno de estilo con prendas que se identifican contigo.
+                    Todo esto en un ambiente relajado, confidencial una opinión honesta fundamentada por mi pasión
+                    por el estilo y mi experiencia como asesora de imagen.
+                </p>
+                <p class="text-justify">Todo esto en un ambiente relajado, confidencial una opinión honesta
+                    fundamentada por mi pasión por el estilo y mi experiencia como asesora de imagen.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section-man2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="text-center mb-5">{% if man.section_3_title %} {{ man.section_3_title }} {% else %} Acerca de esta asesoria {% endif %}</h1>
+                {% if man.section_3_description %}
+                {{ man.section_3_description | safe }}
+                {% else %}
+                <p class="text-justify">
+                    Esta asesoría se divide en tres servicios fundamentales:
+                </p>
+                <ol>
+                    <li>Asesoría de imagen integral</li>
+                    <li>Fondo de armario</li>
+                    <li>Personal shopping</li>
+                </ol>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="parallax">
+    <div class="bg-parallax" style="background-image: url({% if man.section_4_parallax %} {{ man.section_4_parallax.url }} {% else %} {% static 'img/parallax/watch-man.jpg' %} {% endif %});">
+        <div class="parallax-overlay">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1>{% if man.section_4_parallax_title %} {{ man.section_4_parallax_title }} {% else %} Si no has probado antes un servicio como este contacta conmigo sin compromiso. {% endif %}</h1>
+                    <a href="contact.html" class="btn btn-mar mt-3">Contactar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-man3">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1>- La ropa no significa nada hasta que alguien vive en ella.</h1>
+                <div class="text-right mt-3">
+                    <blockquote class="blockquote mb-4">
+                        <p style="color: #222;">
+                            <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                            <cite title="Source Title">- Marc Jacobs</cite>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
